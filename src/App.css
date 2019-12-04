@@ -20,3 +20,16 @@
 .App-link {
   color: #09d3ac;
 }
+
+.options-form {
+  margin-bottom: 20px;
+}
+
+.options-form input {
+  margin: 0 10px 10px 0;
+}
+
+.team-names {
+  display: flex;
+  flex-direction: column;
+}

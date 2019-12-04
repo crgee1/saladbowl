@@ -1,7 +1,6 @@
 import './modal.scss'
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
-import { connect } from 'react-redux';
+import StartScreen from '../start_screen/start_screen';
 
 class Modal extends React.Component {
     constructor(props) {
@@ -15,14 +14,8 @@ class Modal extends React.Component {
         }
 
         switch (this.props.modal) {
-            case 'saveRoute':
-                this.component = <SaveRouteContainer routeInfo={routeInfo} />;
-                break;
-            case 'updateRoute':
-                this.component = <UpdateRouteContainer routeInfo={routeInfo} prevRoute={prevRoute} prevLocations={prevLocations} />;
-                break;
-            case 'commentModal':
-                this.component = <CommentModalContainer comments={comments} likes={likes} liked={liked} handleDeleteComment={handleDeleteComment} currentUser={currentUser} workout={workout} createComment={createComment} />;
+            case 'startScreen':
+                this.component = <StartScreen />
                 break;
             default:
                 return null;
@@ -38,16 +31,4 @@ class Modal extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        modal: state.ui.modal,
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        closeModal: () => dispatch(closeModal())
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default Modal;
