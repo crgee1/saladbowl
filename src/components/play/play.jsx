@@ -27,7 +27,18 @@ class Play extends React.Component {
         }
     }
 
-    displayWord() {
+    correctWord() {
+        return () => {
+            let wordsArr = [...this.state.words];
+            for (let i = wordsArr.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [wordsArr[i], wordsArr[j]] = [wordsArr[j], wordsArr[i]];
+            }
+            wordsArr.pop();
+            this.setState({words: wordsArr});
+        }
+    }
+    passWord() {
         return () => {
             let wordsArr = [...this.state.words];
             for (let i = wordsArr.length - 1; i > 0; i--) {
@@ -58,7 +69,8 @@ class Play extends React.Component {
                 <div>Points: {teamBPoints}</div>
                 <div>{words.join(', ')}</div>
                 <button onClick={this.stateRound().bind(this)}>Start Round</button>
-                <button onClick={this.displayWord().bind(this)}>New Word</button>
+                <button onClick={this.correctWord().bind(this)}>Correct Word</button>
+                <button onClick={this.passWord().bind(this)}>Pass Word</button>
                 <button onClick={this.reset().bind(this)}>Reset</button>
             </div>
         )
