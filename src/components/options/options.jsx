@@ -33,37 +33,46 @@ class Options extends React.Component {
     }
 
     displayOptions() {
-        const { display } = this.state;
+        const { display, words } = this.state;
         if (!display) return null;
 
         return (
             <div className="options-display">
                 <form className="options-form " onSubmit={this.addWord().bind(this)}>
-                    <input type="text" name="word" placeholder="Add to the word pool" />
-                    <input type="submit" value="Add Word/Phrase"/> 
+                    <input type="text" className="options-input" name="word" placeholder="Add to the answers" />
+                    <input type="submit" className="btn" value="Add Word/Phrase"/> 
                 </form>
                 <form className="options-form team-names" onSubmit={this.handleSubmitPlay().bind(this)}>
-                    <label >Team 1's Name: </label>
-                    <input type="text" placeholder="Red Team" onChange={this.handleInput('teamAName').bind(this)} />
-                    <label >Team 2's Name: </label>
-                    <input type="text" placeholder="Blue Team" onChange={this.handleInput('teamBName').bind(this)} />
-                    <input type="submit" value="Start Game"/>
+                    <label className="btn-label">Team 1's Name: </label>
+                    <input type="text" className="options-input" placeholder="Red Team" onChange={this.handleInput('teamAName').bind(this)} />
+                    <label className="btn-label">Team 2's Name: </label>
+                    <input type="text" className="options-input" placeholder="Blue Team" onChange={this.handleInput('teamBName').bind(this)} />
+                    <div>{words.join(', ')}</div>
+                    <input type="submit" className="btn" value="Start Game"/>
                 </form>
             </div>
         )
     }
 
-    render() {
-        const { teamAName, teamBName, words } = this.state;
+    displayPlay() {
+        const { teamAName, teamBName, words, display } = this.state;
+        if (display) return null;
 
         return (
-            <div className="options-main">
-                {this.displayOptions()}
-                <Play 
+            <Play
                 teamAName={teamAName}
                 teamBName={teamBName}
                 words={words}
-                />
+            />
+        )
+    }
+
+    render() {
+       
+        return (
+            <div className="options-main">
+                {this.displayOptions()}
+                {this.displayPlay()}
             </div>
         )
     }

@@ -1,16 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-class StartScreen extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+export default class StartScreen extends React.Component {
 
     render() {
 
         return (
-            <div></div>
+            <div>
+                <Link to={`how-to`} >How To Play</Link>
+                <Link to={`options`} >Set Up A Game</Link>
+            </div>
         )
     }
 }
-
-export default StartScreen;

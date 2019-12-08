@@ -21,8 +21,41 @@
   color: #09d3ac;
 }
 
+div {
+  color: white;
+}
+
+.btn {
+  height: 40px;
+  background-color: #3e6773;
+  border-radius: 6px;
+  border: 1px solid #282c34;
+}
+
+.btn-label {
+  color: white;
+  margin-bottom: 5px;
+}
+.options-main {
+  height: 100vh;
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.options-display {
+  /* margin-top: 25px; */
+}
+
 .options-form {
   margin-bottom: 20px;
+}
+
+.options-input {
+  height: 36px;
+  box-sizing: border-box;
+  padding-left: 5px;
 }
 
 .options-form input {
@@ -32,4 +65,25 @@
 .team-names {
   display: flex;
   flex-direction: column;
+}
+
+.round-screen {
+  display: flex;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

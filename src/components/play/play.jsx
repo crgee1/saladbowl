@@ -8,17 +8,31 @@ class Play extends React.Component {
             teamAPoints: 0,
             teamBPoints: 0,
             word: '',
-            modal: null,
-            words: this.props.words
+            modal: 'roundScreen',
+            words: this.props.words,
+            time: 10,
         }
+    }
+
+    startTimer() {
+        let timer = setInterval(() => {
+            if (this.state.time > 1) {
+                this.setState((prevState) => ({
+                    time: prevState.time - 1,
+                }))
+            } else {
+                this.setState({modal: 'roundScreen', time: 10})
+                clearInterval(timer);
+            }
+        }, 1000);
+    }
+
+    closeModal() {
+        this.setState({modal: null});
     }
 
     roundStartModal() {
         this.setState({modal: 'startScreen'})
-    }
-
-    pickWordsModal() {
-
     }
 
     stateRound() {
@@ -27,27 +41,27 @@ class Play extends React.Component {
         }
     }
 
-    correctWord() {
-        return () => {
-            let wordsArr = [...this.state.words];
-            for (let i = wordsArr.length - 1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i + 1));
-                [wordsArr[i], wordsArr[j]] = [wordsArr[j], wordsArr[i]];
-            }
-            wordsArr.pop();
-            this.setState({words: wordsArr});
+    shuffleWords() {
+        let wordsArr = [...this.state.words];
+        for (let i = wordsArr.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [wordsArr[i], wordsArr[j]] = [wordsArr[j], wordsArr[i]];
         }
+        let displayWord = wordsArr.pop();
+        this.setState({word: displayWord, words: wordsArr});
     }
+
+    correctWord() {
+        let wordsArr = [...this.state.words];
+        let displayWord = wordsArr.pop();
+        this.setState({ word: displayWord, words: wordsArr });
+    }
+
     passWord() {
-        return () => {
-            let wordsArr = [...this.state.words];
-            for (let i = wordsArr.length - 1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i + 1));
-                [wordsArr[i], wordsArr[j]] = [wordsArr[j], wordsArr[i]];
-            }
-            console.log(wordsArr.pop());
-            this.setState({words: wordsArr});
-        }
+        let wordsArr = [...this.state.words];
+        wordsArr.unshift(this.state.word);
+        let displayWord = wordsArr.pop();
+        this.setState({ word: displayWord, words: wordsArr });
     }
 
     reset() {
@@ -56,21 +70,25 @@ class Play extends React.Component {
         }
     }
 
+    startRound() {
+        this.startTimer();
+        this.closeModal();
+        this.shuffleWords();
+    }
+
     render() {
-        const { teamAName, teamBName, words } = this.props;
+        const { teamAName, teamBName } = this.props;
         const { teamAPoints, teamBPoints } = this.state;
+        const teamA = {name: teamAName, points: teamAPoints}
+        const teamB = {name: teamBName, points: teamBPoints}
 
         return (
             <div className="play-main">
-                <Modal modal={this.state.modal}/>
-                <div>Team: {teamAName}</div>
-                <div>Points: {teamAPoints}</div>
-                <div>Team: {teamBName}</div>
-                <div>Points: {teamBPoints}</div>
-                <div>{words.join(', ')}</div>
-                <button onClick={this.stateRound().bind(this)}>Start Round</button>
-                <button onClick={this.correctWord().bind(this)}>Correct Word</button>
-                <button onClick={this.passWord().bind(this)}>Pass Word</button>
+                <Modal modal={this.state.modal} startRound={this.startRound.bind(this)} teamA={teamA} teamB={teamB}/>
+                <div>{this.state.time}</div>
+                <div>{this.state.word}</div>
+                <button onClick={this.correctWord.bind(this)}>Correct</button>
+                <button onClick={this.passWord.bind(this)}>Pass</button>
                 <button onClick={this.reset().bind(this)}>Reset</button>
             </div>
         )
