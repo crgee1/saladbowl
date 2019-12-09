@@ -11,7 +11,7 @@ class Options extends React.Component {
             words: [],
             showAnswers: false,
             first: 'random',
-            time: 1,
+            time: 60,
         }
         this.index = 0;
         this.updateFirst = this.updateFirst.bind(this);

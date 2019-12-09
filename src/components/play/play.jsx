@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from '../modal/modal';
+import Modal from '../modals/modal';
 
 class Play extends React.Component {
     constructor(props) {
@@ -11,20 +11,20 @@ class Play extends React.Component {
             modal: 'roundScreen',
             words: this.props.words,
             time: this.props.time,
-            turn: 1,
-            playingTeam: this.props.first
+            playingTeam: this.props.first,
+            round: 1,
         }
     }
 
     startTimer() {
-        let timer = setInterval(() => {
+        this.timer = setInterval(() => {
             if (this.state.time > 1) {
                 this.setState((prevState) => ({
                     time: prevState.time - 1,
                 }))
             } else {
-                this.setState({modal: 'roundScreen', time: this.props.time, turn: this.state.turn+1, playingTeam: !this.state.playingTeam})
-                clearInterval(timer);
+                this.setState({modal: 'roundScreen', time: this.props.time, playingTeam: !this.state.playingTeam})
+                clearInterval(this.timer);
             }
         }, 1000);
     }
@@ -34,7 +34,7 @@ class Play extends React.Component {
     }
 
     shuffleWords() {
-        let wordsArr = [...this.state.words];
+        let wordsArr = [...this.props.words];
         for (let i = wordsArr.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
             [wordsArr[i], wordsArr[j]] = [wordsArr[j], wordsArr[i]];
@@ -44,9 +44,44 @@ class Play extends React.Component {
     }
 
     correctWord() {
-        let wordsArr = [...this.state.words];
-        let displayWord = wordsArr.pop();
-        this.setState({ word: displayWord, words: wordsArr });
+        const { words, playingTeam, teamAPoints, teamBPoints } = this.state;
+        let wordsArr = [...words];
+        if (wordsArr.length === 0) {
+            this.endRound();
+        } else {
+            let displayWord = wordsArr.pop();
+            if (playingTeam) {
+                this.setState({ word: displayWord, words: wordsArr, teamAPoints: teamAPoints+1 });
+            } else {
+                this.setState({ word: displayWord, words: wordsArr, teamBPoints: teamBPoints+1 });
+            }
+        }
+    }
+
+    endRound() {
+        const { playingTeam, teamAPoints, teamBPoints, round } = this.state;
+
+        if (playingTeam) {
+            this.setState({ teamAPoints: teamAPoints + 1, time: 0 });
+        } else {
+            this.setState({ teamBPoints: teamBPoints + 1, time: 0 });
+        }
+        
+        if (round === 3) {
+            this.setState({ 
+                modal: 'endScreen', 
+                time: this.props.time, 
+                playingTeam: !playingTeam });
+            clearInterval(this.timer);
+        } else {
+            this.setState({ 
+                modal: 'roundScreen', 
+                time: this.props.time, 
+                playingTeam: !playingTeam, 
+                round: round+1 });
+            clearInterval(this.timer);
+            this.shuffleWords();
+        };
     }
 
     passWord() {
@@ -75,12 +110,15 @@ class Play extends React.Component {
         const teamB = {name: teamBName, points: teamBPoints}
         return (
             <div className="play-main">
-                <Modal modal={modal} startRound={this.startRound.bind(this)} teamA={teamA} teamB={teamB} playingTeam={playingTeam}/>
-                <div>{this.state.time}</div>
-                <div>{this.state.word}</div>
-                <button onClick={this.correctWord.bind(this)}>Correct</button>
-                <button onClick={this.passWord.bind(this)}>Pass</button>
-                <button onClick={this.reset().bind(this)}>Reset</button>
+                <Modal modal={modal} startRound={this.startRound.bind(this)} teamA={teamA} teamB={teamB} playingTeam={playingTeam} />
+                <div className="play-container">
+                    <h1 className="play-timer">{this.state.time}</h1>
+                    <h2 className="play-display-word">{this.state.word}</h2>
+                    <div className="play-btn-container">
+                        <button className="btn play-btns" onClick={this.correctWord.bind(this)}>Correct</button>
+                        <button className="btn play-btns" onClick={this.passWord.bind(this)}>Pass</button>
+                    </div>
+                </div>
             </div>
         )
     }

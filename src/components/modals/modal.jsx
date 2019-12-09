@@ -1,6 +1,6 @@
-import './modal.scss'
 import React from 'react';
-import RoundScreen from '../round_screen/round_screen';
+import RoundScreen from './round_screen';
+import EndScreen from './end_screen';
 
 class Modal extends React.Component {
 
@@ -13,6 +13,9 @@ class Modal extends React.Component {
         switch (modal) {
             case 'roundScreen':
                 this.component = <RoundScreen teamA={teamA} teamB={teamB} startRound={startRound} playingTeam={playingTeam}/>
+                break;
+            case 'endScreen':
+                this.component = <EndScreen teamA={teamA} teamB={teamB} startRound={startRound} playingTeam={playingTeam}/>
                 break;
             default:
                 return null;
