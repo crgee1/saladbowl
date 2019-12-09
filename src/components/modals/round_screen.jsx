@@ -17,8 +17,12 @@ export default class RoundScreen extends React.Component {
 
         return (
             <div className="round-container">
-                Round {round} <br/>
-                <strong>{roundType}</strong> Round
+                <div className="round">
+                    Round {round}
+                </div>
+                <div>
+                    <strong>{roundType}</strong> Round
+                </div>
             </div>
         )
     }

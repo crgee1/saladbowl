@@ -10,7 +10,6 @@ class Play extends React.Component {
             word: '',
             modal: 'roundScreen',
             words: this.props.words,
-            // time: this.props.time,
             playingTeam: this.props.first,
             round: 1,
         }

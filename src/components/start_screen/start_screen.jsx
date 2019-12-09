@@ -8,12 +8,15 @@ export default class StartScreen extends React.Component {
 
         return (
             <div className="start-screen">
-                <div className="start-screen-btn-container">
-                    <Link to={`options`} >Set Up a Game</Link>
-                    <Link to={`how-to`} >How To Play</Link>
-                </div>
-                <div className="saladbowl-container">
-                    <img src={saladbowl} className="saladbowl" alt=""/>
+                <header className="start-screen-header">Saladbowl</header>
+                <div className="start-screen-nonheader">
+                    <div className="start-screen-btn-container">
+                        <Link to={`options`} >Set Up a Game</Link>
+                        <Link to={`how-to`} >How To Play</Link>
+                    </div>
+                    <div className="saladbowl-container">
+                        <img src={saladbowl} className="saladbowl" alt=""/>
+                    </div>
                 </div>
             </div>
         )
