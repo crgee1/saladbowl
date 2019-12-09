@@ -36,8 +36,12 @@ class Options extends React.Component {
 
     addWord(e) {
         e.preventDefault();
-        this.setState({ words: [...this.state.words, e.currentTarget[0].value]}, () => this.index++)
-        e.currentTarget[0].value = '';
+        if (e.currentTarget[0].value.length === 0) {
+            alert('Answer can not be blank');
+        } else {
+            this.setState({ words: [...this.state.words, e.currentTarget[0].value]}, () => this.index++)
+            e.currentTarget[0].value = '';
+        }
     }
     
     removeWord(idx) {
@@ -90,7 +94,7 @@ class Options extends React.Component {
                         <label className="btn_label">Team 2's Name: </label>
                         <input type="text" className="options-input" value={this.state.teamBName} onChange={this.updateInput('teamBName')} />
                         <div className="first-team" onChange={this.updateFirst}>
-                            <h4>Who goes's first?</h4>
+                            <h4>Who goes first?</h4>
                             <div className="options-radio" >
                                 <input type="radio" name="first" value={true}/>Team 1
                             </div>

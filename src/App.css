@@ -80,20 +80,20 @@ div {
 
 .options-display {
   display: flex;
-  margin: 20px 0;
+  padding: 20px 10px;
+  background-color: #282c34;
 }
 
 .options-display-left {
   margin: 0 32px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
 }
 
 .options-display-right {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  margin-right: 32px;
 }
 
 .options-form {
