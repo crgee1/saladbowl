@@ -2,7 +2,7 @@
   "name": "saladbowl",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/crgee1/saladbowl",
+  "homepage": "https://christophergee.me/saladbowl",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "node-sass": "^4.13.0",
