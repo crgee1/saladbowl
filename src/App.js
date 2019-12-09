@@ -4,8 +4,6 @@ import './App.css';
 import Options from './components/options/options';
 import StartScreen from './components/start_screen/start_screen';
 import HowTo from './components/how_to/how_to';
-// import Play from './components/play/play';
-
 
 const App = () => (
   <div>
@@ -13,7 +11,6 @@ const App = () => (
       <Route exact path='/' component={StartScreen}/>
       <Route path='/how-to' component={HowTo}/>
       <Route path='/options' component={Options}/>
-      {/* <Route path='/play' component={Play}/> */}
     </Switch>
   </div>
 )

@@ -10,7 +10,9 @@ class Play extends React.Component {
             word: '',
             modal: 'roundScreen',
             words: this.props.words,
-            time: 10,
+            time: this.props.time,
+            turn: 1,
+            playingTeam: this.props.first
         }
     }
 
@@ -21,7 +23,7 @@ class Play extends React.Component {
                     time: prevState.time - 1,
                 }))
             } else {
-                this.setState({modal: 'roundScreen', time: 10})
+                this.setState({modal: 'roundScreen', time: this.props.time, turn: this.state.turn+1, playingTeam: !this.state.playingTeam})
                 clearInterval(timer);
             }
         }, 1000);
@@ -29,16 +31,6 @@ class Play extends React.Component {
 
     closeModal() {
         this.setState({modal: null});
-    }
-
-    roundStartModal() {
-        this.setState({modal: 'startScreen'})
-    }
-
-    stateRound() {
-        return () => {
-            this.setState({words: this.props.words});
-        }
     }
 
     shuffleWords() {
@@ -78,13 +70,12 @@ class Play extends React.Component {
 
     render() {
         const { teamAName, teamBName } = this.props;
-        const { teamAPoints, teamBPoints } = this.state;
+        const { teamAPoints, teamBPoints, modal, playingTeam } = this.state;
         const teamA = {name: teamAName, points: teamAPoints}
         const teamB = {name: teamBName, points: teamBPoints}
-
         return (
             <div className="play-main">
-                <Modal modal={this.state.modal} startRound={this.startRound.bind(this)} teamA={teamA} teamB={teamB}/>
+                <Modal modal={modal} startRound={this.startRound.bind(this)} teamA={teamA} teamB={teamB} playingTeam={playingTeam}/>
                 <div>{this.state.time}</div>
                 <div>{this.state.word}</div>
                 <button onClick={this.correctWord.bind(this)}>Correct</button>

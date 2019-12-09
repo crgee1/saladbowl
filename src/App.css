@@ -1,5 +1,5 @@
-#root {
-  background-color: #282c34;
+h4 {
+  margin: 7px 0;
 }
 
 .App {
@@ -30,7 +30,7 @@ div {
 }
 
 .btn {
-  height: 40px;
+  height: 32px;
   background-color: #3e6773;
   border-radius: 6px;
   border: 1px solid #282c34;
@@ -49,21 +49,52 @@ div {
 }
 
 .options-display {
-  margin-top: 25px;
+  display: flex;
+  margin: 20px 0;
+}
+
+.options-display-left {
+  margin-right: 40px;
+}
+
+.options-display-right {
+  display: flex;
+  flex-direction: column;
 }
 
 .options-form {
-  /* margin: 20px 0; */
+  display: flex;
+  flex-direction: column;
 }
 
-.options_input {
-  height: 36px;
+.options-form-answers {
+  display: flex;
+  flex-direction: column;
+}
+
+.options-input {
+  height: 24px;
   box-sizing: border-box;
   padding-left: 5px;
+  margin: 0 10px 10px 0;
 }
 
-.options-form input {
-  margin: 10px 10px 10px 0;
+.options-radio {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.options-radio input {
+  margin: 0 5px 0 0;
+}
+
+.first-team {
+  /* margin-bottom: 5px; */
+}
+
+.time-limit {
+  margin-bottom: 15px;
 }
 
 .team-names {
@@ -71,18 +102,49 @@ div {
   flex-direction: column;
 }
 
+.round-screen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: teal;
+  padding: 15px 0;
+  border-radius: 6px;
+}
+
 .round-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.round-screen-scores {
+  width: 65vw;
+  padding: 15px 0;
   display: flex;
   justify-content: space-around;
 }
 
-.answers-bank_container {
+.round-screen-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  width: 120px;
+}
+
+.answers-bank {
+  margin: 6px 0;
+}
+
+.answers-bank-container {
   display: flex;
   flex-wrap: wrap;
   max-width: 75vw;
 }
 
-.answers-bank_word {
+.answers-bank-word {
   margin: 6px 0;
 }
 
