@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/saladbowl/static/css/main.88215238.chunk.css",
+    "main.css": "/saladbowl/static/css/main.00e66ee0.chunk.css",
     "main.js": "/saladbowl/static/js/main.f9a02c12.chunk.js",
     "main.js.map": "/saladbowl/static/js/main.f9a02c12.chunk.js.map",
     "runtime-main.js": "/saladbowl/static/js/runtime-main.53824cfc.js",
@@ -8,15 +8,15 @@
     "static/js/2.8ef73ea5.chunk.js": "/saladbowl/static/js/2.8ef73ea5.chunk.js",
     "static/js/2.8ef73ea5.chunk.js.map": "/saladbowl/static/js/2.8ef73ea5.chunk.js.map",
     "index.html": "/saladbowl/index.html",
-    "precache-manifest.4915697603733b72a064ba07cc450353.js": "/saladbowl/precache-manifest.4915697603733b72a064ba07cc450353.js",
+    "precache-manifest.064a125499b45c4c8d2303a755642b4b.js": "/saladbowl/precache-manifest.064a125499b45c4c8d2303a755642b4b.js",
     "service-worker.js": "/saladbowl/service-worker.js",
-    "static/css/main.88215238.chunk.css.map": "/saladbowl/static/css/main.88215238.chunk.css.map",
+    "static/css/main.00e66ee0.chunk.css.map": "/saladbowl/static/css/main.00e66ee0.chunk.css.map",
     "static/media/saladbowl.png": "/saladbowl/static/media/saladbowl.2306fee0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.53824cfc.js",
     "static/js/2.8ef73ea5.chunk.js",
-    "static/css/main.88215238.chunk.css",
+    "static/css/main.00e66ee0.chunk.css",
     "static/js/main.f9a02c12.chunk.js"
   ]
 }
