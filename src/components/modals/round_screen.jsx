@@ -37,11 +37,11 @@ export default class RoundScreen extends React.Component {
                     {this.displayRound()}
                     {this.displayName()}
                     <div className="round-screen-scores">
-                        <div>
+                        <div className="team-scores">
                             <div>Team: {teamA.name}</div>
                             <div>Points: {teamA.points}</div>
                         </div>
-                        <div>
+                        <div className="team-scores">
                             <div>Team: {teamB.name}</div>
                             <div>Points: {teamB.points}</div>
                         </div>

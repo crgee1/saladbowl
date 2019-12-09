@@ -315,3 +315,15 @@ div {
 .hide {
   display: none;
 }
+
+@media (max-width: 400px) {
+  .options-display {
+    flex-direction: column;
+  }
+
+  .options-display-right {
+    margin: 32px 0;
+    text-align: center;
+    align-items: center;
+  }
+}
