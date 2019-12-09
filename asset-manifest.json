@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/saladbowl/static/css/main.0c5f0b36.chunk.css",
-    "main.js": "/saladbowl/static/js/main.6f959b9f.chunk.js",
-    "main.js.map": "/saladbowl/static/js/main.6f959b9f.chunk.js.map",
+    "main.css": "/saladbowl/static/css/main.50e28efd.chunk.css",
+    "main.js": "/saladbowl/static/js/main.9216b889.chunk.js",
+    "main.js.map": "/saladbowl/static/js/main.9216b889.chunk.js.map",
     "runtime-main.js": "/saladbowl/static/js/runtime-main.53824cfc.js",
     "runtime-main.js.map": "/saladbowl/static/js/runtime-main.53824cfc.js.map",
-    "static/js/2.f1d52ca5.chunk.js": "/saladbowl/static/js/2.f1d52ca5.chunk.js",
-    "static/js/2.f1d52ca5.chunk.js.map": "/saladbowl/static/js/2.f1d52ca5.chunk.js.map",
+    "static/js/2.8ef73ea5.chunk.js": "/saladbowl/static/js/2.8ef73ea5.chunk.js",
+    "static/js/2.8ef73ea5.chunk.js.map": "/saladbowl/static/js/2.8ef73ea5.chunk.js.map",
     "index.html": "/saladbowl/index.html",
-    "precache-manifest.de35dc9178224a2b3494fce167e918b5.js": "/saladbowl/precache-manifest.de35dc9178224a2b3494fce167e918b5.js",
+    "precache-manifest.a1b3b670e74b93d3a289af78b19fa19e.js": "/saladbowl/precache-manifest.a1b3b670e74b93d3a289af78b19fa19e.js",
     "service-worker.js": "/saladbowl/service-worker.js",
-    "static/css/main.0c5f0b36.chunk.css.map": "/saladbowl/static/css/main.0c5f0b36.chunk.css.map",
+    "static/css/main.50e28efd.chunk.css.map": "/saladbowl/static/css/main.50e28efd.chunk.css.map",
     "static/media/saladbowl.png": "/saladbowl/static/media/saladbowl.2306fee0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.53824cfc.js",
-    "static/js/2.f1d52ca5.chunk.js",
-    "static/css/main.0c5f0b36.chunk.css",
-    "static/js/main.6f959b9f.chunk.js"
+    "static/js/2.8ef73ea5.chunk.js",
+    "static/css/main.50e28efd.chunk.css",
+    "static/js/main.9216b889.chunk.js"
   ]
 }
