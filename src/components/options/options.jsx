@@ -109,7 +109,7 @@ class Options extends React.Component {
                             <h4>Turn Timer</h4>
                             <input type="number" value={this.state.time} onChange={this.updateInput('time')}/>
                         </div>
-                        <input type="submit" className="btn" value="Game Time" />
+                        <input type="submit" className="btn" value={pause ? "Resume Game" : "Start Game"} />
                     </form>
                 </div>
                 <div className="options-display-right">
