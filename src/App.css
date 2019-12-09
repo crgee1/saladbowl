@@ -40,6 +40,12 @@ div {
   border: 1px solid #282c34;
 }
 
+.btn a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+
 .btn_label {
   color: white;
   margin-bottom: 5px;
@@ -132,6 +138,7 @@ div {
   align-items: center;
   padding: 2px;
   width: 120px;
+  font-weight: 700;
 }
 
 .answers-bank {
@@ -195,6 +202,48 @@ div {
 
 .end-screen-btn-container {
   display: flex;
+}
+
+.saladbowl {
+  height: 75%;
+  width: 75%;
+}
+
+.saladbowl-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.start-screen {
+  height: 100vh;
+  /* background: url(./assets/images/saladbowl.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position-x: 85%;
+  background-position-y: center; */
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+}
+
+.start-screen a {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+
+.start-screen-btn-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-to {
+  color: black;
 }
 
 .modal-background {
