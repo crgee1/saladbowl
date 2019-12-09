@@ -91,9 +91,9 @@ class Options extends React.Component {
             <div className="options-display">
                 <div className="options-display-left">
                     <form className="options-form team-names" onSubmit={this.startResume.bind(this)}>
-                        <label className="btn_label">Team 1's Name: </label>
+                        <label className="btn-label">Team 1's Name: </label>
                         <input type="text" className="options-input" value={this.state.teamAName} onChange={this.updateInput('teamAName')} />
-                        <label className="btn_label">Team 2's Name: </label>
+                        <label className="btn-label">Team 2's Name: </label>
                         <input type="text" className="options-input" value={this.state.teamBName} onChange={this.updateInput('teamBName')} />
                         <div className="first-team" onChange={this.updateFirst}>
                             <h4>Who goes first?</h4>
@@ -116,7 +116,7 @@ class Options extends React.Component {
                 </div>
                 <div className="options-display-right">
                     <form className="options-form-answers" onSubmit={this.addWord.bind(this)}>
-                        <label>Add to the Answer Bank</label>
+                        <label className="btn-label">Add to the Answer Bank</label>
                         <section>
                             <input type="text" className="options-input" placeholder="Add to the answers" />
                             <input type="submit" className="btn" value="Add Word/Phrase" />

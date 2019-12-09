@@ -59,6 +59,10 @@ div {
   font-weight: 700;
 }
 
+.btn:focus {
+  outline: none;
+}
+
 .btn a {
   text-decoration: none;
   color: white;
@@ -66,7 +70,7 @@ div {
   margin-bottom: 10px;
 }
 
-.btn_label {
+.btn-label {
   color: white;
   margin-bottom: 5px;
 }
