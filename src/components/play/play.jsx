@@ -10,13 +10,14 @@ class Play extends React.Component {
             word: '',
             modal: 'roundScreen',
             words: this.props.words,
-            time: this.props.time,
+            // time: this.props.time,
             playingTeam: this.props.first,
             round: 1,
         }
     }
 
     startTimer() {
+        this.setState({time: this.props.time})
         this.timer = setInterval(() => {
             if (this.state.time > 1) {
                 this.setState((prevState) => ({
@@ -104,13 +105,21 @@ class Play extends React.Component {
     }
 
     render() {
-        const { teamAName, teamBName } = this.props;
-        const { teamAPoints, teamBPoints, modal, playingTeam } = this.state;
+        const { teamAName, teamBName, toggleInput, pause } = this.props;
+        const { teamAPoints, teamBPoints, modal, playingTeam, round } = this.state;
         const teamA = {name: teamAName, points: teamAPoints}
         const teamB = {name: teamBName, points: teamBPoints}
         return (
-            <div className="play-main">
-                <Modal modal={modal} startRound={this.startRound.bind(this)} teamA={teamA} teamB={teamB} playingTeam={playingTeam} />
+            <div className={"play-main" + (pause ? " hide" : "")}>
+                <Modal 
+                    modal={modal} 
+                    startRound={this.startRound.bind(this)} 
+                    teamA={teamA} 
+                    teamB={teamB} 
+                    playingTeam={playingTeam} 
+                    round={round} 
+                    toggleInput={toggleInput}
+                />
                 <div className="play-container">
                     <h1 className="play-timer">{this.state.time}</h1>
                     <h2 className="play-display-word">{this.state.word}</h2>

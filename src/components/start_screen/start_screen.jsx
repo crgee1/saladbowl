@@ -13,7 +13,7 @@ export default class StartScreen extends React.Component {
                     <Link to={`how-to`} >How To Play</Link>
                 </div>
                 <div className="saladbowl-container">
-                    <img src={saladbowl} className="saladbowl"/>
+                    <img src={saladbowl} className="saladbowl" alt=""/>
                 </div>
             </div>
         )

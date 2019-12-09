@@ -2,20 +2,36 @@ import React from 'react';
 
 export default class RoundScreen extends React.Component {
 
-    displayName(teamName) {
-        return teamName[teamName.length - 1] === 's' ? 
-            <div>It is {teamName}' Turn</div> : 
-            <div>It is {teamName}'s Turn</div>
+    displayName() {
+        const { playingTeam, teamA, teamB } = this.props;
+
+        let playingTeamName = playingTeam ? teamA.name : teamB.name;
+        return playingTeamName[playingTeamName.length - 1] === 's' ? 
+            <div><strong>{playingTeamName}</strong>' Turn</div> : 
+            <div><strong>{playingTeamName}</strong>'s Turn</div>
+    }
+
+    displayRound() {
+        const { round } = this.props;
+        let roundType = round === 1 ? 'Verbal Clues' : round === 2 ? 'Charades' : 'One Word';
+
+        return (
+            <div className="round-container">
+                Round {round} <br/>
+                <strong>{roundType}</strong> Round
+            </div>
+        )
     }
 
     render() {
-        const { teamA, teamB, startRound, playingTeam } = this.props;
-        let playingTeamName = playingTeam ? teamA.name : teamB.name;
+        const { teamA, teamB, startRound, toggleInput } = this.props;
         
         return (
             <div className="round-screen-container">
+                <i className="fas fa-cogs" onClick={toggleInput('pause')}></i>
                 <div className="round-screen">
-                    {this.displayName(playingTeamName)}
+                    {this.displayRound()}
+                    {this.displayName()}
                     <div className="round-screen-scores">
                         <div>
                             <div>Team: {teamA.name}</div>

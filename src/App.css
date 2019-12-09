@@ -25,6 +25,11 @@ h4 {
   color: #09d3ac;
 }
 
+.fa-cogs {
+  position: absolute;
+  right: 3%;
+}
+
 div {
   color: white;
 }
@@ -38,6 +43,7 @@ div {
   background-color: #3e6773;
   border-radius: 6px;
   border: 1px solid #282c34;
+  font-weight: 700;
 }
 
 .btn a {
@@ -64,12 +70,16 @@ div {
 }
 
 .options-display-left {
-  margin-right: 40px;
+  margin: 0 32px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
 .options-display-right {
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
 }
 
 .options-form {
@@ -139,6 +149,11 @@ div {
   padding: 2px;
   width: 120px;
   font-weight: 700;
+}
+
+.round-container {
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .answers-bank {
@@ -232,6 +247,7 @@ div {
   font-size: 30px;
   text-decoration: none;
   color: white;
+  text-align: center;
 }
 
 .start-screen-btn-container {
@@ -261,4 +277,8 @@ div {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.hide {
+  display: none;
 }
