@@ -15,16 +15,16 @@ export default class extends React.Component {
             3. The player who's turn it is, is given a word and must get their team to guess the word based on the rules of the particular round. Once the word is guessed correctly, their team earns a point, and the player is given a new word until the time limit runs out.
             </p>
             <p className="indent">
-            a) Round 1, Verbal Clues: You must make your team guess the word by telling them clues, without actually saying the word.
+            a) Round 1, Verbal Clues: You must make your team guess the word by telling them clues, without actually saying any part of the answer.
             </p>
             <p className="indent">
             b) Round 2, Charades: You must make your team guess the word by acting out the word, without saying anything.
             </p>
             <p className="indent">
-            c) Round 3, One Word: You must make your team guess the word by only saying one word only.
+            c) Round 3, One Word: You must make your team guess the word by only saying one word only, that word can not be the any part of the answer.
             </p>
             <p>
-            4. The teams alternate turns and rotate their own players.
+            4. The teams alternate turns.
             </p>
             <p>
                 5. The team with the most points at the end of three rounds wins.

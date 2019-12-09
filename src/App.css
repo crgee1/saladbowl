@@ -89,7 +89,7 @@ div {
 }
 
 .options-display-left {
-  margin: 0 32px;
+  margin-right: 32px;
   display: flex;
   flex-direction: column;
 }
@@ -97,7 +97,6 @@ div {
 .options-display-right {
   display: flex;
   flex-direction: column;
-  margin-right: 32px;
 }
 
 .options-form {
