@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/crgee1/saladbowl/static/css/main.61141bd1.chunk.css",
+    "main.js": "/crgee1/saladbowl/static/js/main.d07a3b69.chunk.js",
+    "main.js.map": "/crgee1/saladbowl/static/js/main.d07a3b69.chunk.js.map",
+    "runtime-main.js": "/crgee1/saladbowl/static/js/runtime-main.2e9c0b6e.js",
+    "runtime-main.js.map": "/crgee1/saladbowl/static/js/runtime-main.2e9c0b6e.js.map",
+    "static/js/2.cbe0208a.chunk.js": "/crgee1/saladbowl/static/js/2.cbe0208a.chunk.js",
+    "static/js/2.cbe0208a.chunk.js.map": "/crgee1/saladbowl/static/js/2.cbe0208a.chunk.js.map",
+    "index.html": "/crgee1/saladbowl/index.html",
+    "precache-manifest.a28bd7659c0364a25ed22fcafd983682.js": "/crgee1/saladbowl/precache-manifest.a28bd7659c0364a25ed22fcafd983682.js",
+    "service-worker.js": "/crgee1/saladbowl/service-worker.js",
+    "static/css/main.61141bd1.chunk.css.map": "/crgee1/saladbowl/static/css/main.61141bd1.chunk.css.map",
+    "static/media/saladbowl.png": "/crgee1/saladbowl/static/media/saladbowl.2306fee0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e9c0b6e.js",
+    "static/js/2.cbe0208a.chunk.js",
+    "static/css/main.61141bd1.chunk.css",
+    "static/js/main.d07a3b69.chunk.js"
+  ]
+}
