@@ -43,6 +43,10 @@ div {
   color: white;
 }
 
+.indent {
+  margin-left: 40px;
+}
+
 .options-display-right .btn {
   margin-left: 7px;
 }
@@ -279,8 +283,16 @@ div {
 }
 
 .how-to {
+  padding: 30px;
   color: white;
   min-height: 100vh;
+}
+
+.how-to a {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
 }
 
 .modal-background {
