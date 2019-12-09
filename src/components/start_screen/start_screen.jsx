@@ -8,7 +8,7 @@ export default class StartScreen extends React.Component {
 
         return (
             <div className="start-screen">
-                <header className="start-screen-header">Saladbowl</header>
+                <header className="start-screen-header">Salad Bowl</header>
                 <div className="start-screen-nonheader">
                     <div className="start-screen-btn-container">
                         <Link to={`options`} >Set Up a Game</Link>

@@ -64,8 +64,10 @@ class Options extends React.Component {
     }
     
     startResume() {
-        const { display, pause } = this.state;
-        if (display) {
+        const { display, words } = this.state;
+        if (words.length === 0) {
+            alert("You're answer bank is looking pretty empty")
+        } else if (display) {
             this.setState({ display: false })
         } else {
             this.setState({pause: false});
