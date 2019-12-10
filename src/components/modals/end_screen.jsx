@@ -27,7 +27,7 @@ export default class endScreen extends React.Component {
                     </div>
                 </div>
                 <div className="end-screen-btn-container">
-                    <div className="btn round-screen-btn"><Link to={'/'}>Back to Menu</Link></div>
+                    <Link to={'/'}><div className="btn round-screen-btn">Back to Menu</div></Link>
                 </div>
             </div>
         )
