@@ -28,7 +28,7 @@ export default class extends React.Component {
             <p>
                 5. The team with the most points at the end of three rounds wins.
             </p>
-            <Link to="/">Back to the Menu</Link>
+            <Link className="back-btn" to="/">Back to the Menu</Link>
         </div>
         )
     }

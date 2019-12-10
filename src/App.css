@@ -1,3 +1,7 @@
+div {
+  font-family: 'Titillium Web', sans-serif;
+}
+
 h4 {
   margin: 7px 0;
 }
@@ -30,11 +34,6 @@ h4 {
   right: 3%;
 }
 
-.start-screen-header {
-  font-size: 4em;
-  text-align: center;
-}
-
 #root {
   background-color: #282c34;
 }
@@ -58,6 +57,7 @@ div {
   border: 1px solid #282c34;
   font-weight: 700;
   cursor: pointer;
+  font-family: 'Oswald', sans-serif;
 }
 
 .btn:focus {
@@ -191,6 +191,7 @@ div {
 
 .answers-bank-word {
   margin: 6px 0;
+  cursor: pointer;
 }
 
 .play-main {
@@ -225,6 +226,7 @@ div {
 
 .play-display-word {
   font-size: 40px;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
 }
 
@@ -263,6 +265,12 @@ div {
   justify-content: center;
 }
 
+.start-screen-header {
+  font-size: 6em;
+  text-align: center;
+  font-family: 'Sacramento', cursive;
+}
+
 .start-screen-nonheader {
   display: flex;
 
@@ -281,6 +289,7 @@ div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Concert One', cursive;
 }
 
 .how-to {
@@ -294,6 +303,7 @@ div {
   text-decoration: none;
   color: white;
   text-align: center;
+  font-family: 'Gupter', serif;
 }
 
 .modal-background {
