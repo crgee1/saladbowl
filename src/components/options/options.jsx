@@ -108,8 +108,10 @@ class Options extends React.Component {
 
         return (
             <div className="options-display">
-                {this.displaySound()}
-                {this.displayQuestion()}
+                <div className="options-btn-container">
+                    {this.displaySound()}
+                    {this.displayQuestion()}
+                </div>
                 <div className="options-display-left">
                     <form className="options-form team-names" onSubmit={this.startResume.bind(this)}>
                         <label className="btn-label">Team 1's Name: </label>

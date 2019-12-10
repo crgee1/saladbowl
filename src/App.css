@@ -38,18 +38,14 @@ h4 {
 .sound-effects {
   height: 18px;
   width: 18px;
-  position: absolute;
-  right: 8%;
   cursor: pointer;
 }
 
 .question-mark {
   height: 18px;
   width: 18px;
-  position: absolute;
-  right: 8%;
-  top: 7%;
   cursor: pointer;
+  margin-top: 10px;
 } 
 
 .question-mark a {
@@ -105,6 +101,11 @@ a {
   background-color: #23b2e8;
   display: flex;
   justify-content: center;
+}
+
+.options-btn-container {
+  position: absolute;
+  right: 8%;
 }
 
 .options-display {
