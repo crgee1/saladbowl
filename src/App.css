@@ -36,6 +36,8 @@ h4 {
 }
 
 .sound-effects {
+  height: 18px;
+  width: 18px;
   position: absolute;
   right: 8%;
   cursor: pointer;
