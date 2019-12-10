@@ -20,7 +20,7 @@ export default class extends React.Component {
                 b) Round 2, Charades: You must make your team guess the word by acting out the word, without saying anything.
             </p>
             <p className="indent">
-                c) Round 3, One Word: You must make your team guess the word by only saying one word only, that word can not be the any part of the answer.
+                c) Round 3, One Word: You must make your team guess the word by only saying one word only, that word can not be any part of the answer.
             </p>
             <p>
                 4. The teams alternate turns.
