@@ -57,6 +57,7 @@ div {
   border-radius: 6px;
   border: 1px solid #282c34;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .btn:focus {
@@ -179,6 +180,7 @@ div {
 
 .answers-bank {
   margin: 6px 0;
+  cursor: pointer;
 }
 
 .answers-bank-container {

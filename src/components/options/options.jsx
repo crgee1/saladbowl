@@ -6,15 +6,14 @@ class Options extends React.Component {
         super(props);
         this.state = {
             display: true,
-            teamAName: 'Red Team',
-            teamBName: 'Blue Team',
-            words: [],
+            teamAName: sessionStorage.getItem('teamAName') || 'Red Team',
+            teamBName: sessionStorage.getItem('teamBName') ||'Blue Team',
+            words: JSON.parse(sessionStorage.getItem('words')) || [],
             showAnswers: false,
             first: 'random',
-            time: 60,
+            time: sessionStorage.getItem('time') || 60,
             pause: false,
         }
-        this.index = 0;
         this.updateFirst = this.updateFirst.bind(this);
         this.updateInput = this.updateInput.bind(this);
         this.toggleInput = this.toggleInput.bind(this);
@@ -23,7 +22,8 @@ class Options extends React.Component {
     updateInput(field) {
         return (e) => {
             e.preventDefault();
-            this.setState({ [field]: e.target.value });
+            let ele = e.target.value;
+            this.setState({ [field]: ele }, () => sessionStorage.setItem(field, ele));
         };
     }
 
@@ -39,7 +39,8 @@ class Options extends React.Component {
         if (e.currentTarget[0].value.length === 0) {
             alert('Answer can not be blank');
         } else {
-            this.setState({ words: [...this.state.words, e.currentTarget[0].value]}, () => this.index++)
+            const newWord = e.currentTarget[0].value;
+            this.setState({ words: [...this.state.words, newWord] }, () => sessionStorage.setItem('words', JSON.stringify(this.state.words)))
             e.currentTarget[0].value = '';
         }
     }
@@ -48,7 +49,7 @@ class Options extends React.Component {
         return () => {
             let array = this.state.words;
             array.splice(idx, 1)
-            this.setState({words: array});
+            this.setState({words: array}, () => sessionStorage.setItem('words', JSON.stringify(array)));
         }
     }
     
