@@ -300,7 +300,7 @@ a {
 
 .start-screen-nonheader {
   display: flex;
-  height: 60vh;
+  height: 40vh;
 }
 
 .start-screen a {
