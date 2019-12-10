@@ -13,6 +13,7 @@ class Options extends React.Component {
             first: 'random',
             time: sessionStorage.getItem('time') || 60,
             pause: false,
+            sound: false,
         }
         this.updateFirst = this.updateFirst.bind(this);
         this.updateInput = this.updateInput.bind(this);
@@ -84,12 +85,21 @@ class Options extends React.Component {
         this.setState({first: input});
     }
 
+    displaySound() {
+        const { sound } = this.state;
+        return (
+            <div className="sound-effects" onClick={this.toggleInput('sound')}>
+                <i className={"fas" + (sound ? " fa-volume-up" : " fa-volume-mute")}></i>
+            </div>)
+    }
+
     displayOptions() {
         const { display, pause } = this.state;
         if (!display && !pause) return null;
 
         return (
             <div className="options-display">
+                {this.displaySound()}
                 <div className="options-display-left">
                     <form className="options-form team-names" onSubmit={this.startResume.bind(this)}>
                         <label className="btn-label">Team 1's Name: </label>
@@ -130,7 +140,7 @@ class Options extends React.Component {
     }
 
     displayPlay() {
-        let { display, teamAName, teamBName, words, first, time, pause } = this.state;
+        let { display, teamAName, teamBName, words, first, time, pause, sound } = this.state;
         if (display) return null;
 
         let firstTeam = first; 
@@ -147,6 +157,7 @@ class Options extends React.Component {
                 teamBName={teamBName}
                 words={words}
                 pause={pause}
+                sound={sound}
                 toggleInput={this.toggleInput}
             />
         )

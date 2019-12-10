@@ -1,5 +1,7 @@
 import React from 'react';
 import Modal from '../modals/modal';
+import correct from '../../assets/audio/correct.wav';
+import pass from '../../assets/audio/pass.flac';
 
 class Play extends React.Component {
     constructor(props) {
@@ -56,6 +58,7 @@ class Play extends React.Component {
                 this.setState({ word: displayWord, words: wordsArr, teamBPoints: teamBPoints+1 });
             }
         }
+        if (this.props.sound) new Audio(correct).play();
     }
 
     endRound() {
@@ -89,6 +92,8 @@ class Play extends React.Component {
         wordsArr.unshift(this.state.word);
         let displayWord = wordsArr.pop();
         this.setState({ word: displayWord, words: wordsArr });
+
+        if (this.props.sound) new Audio(pass).play();
     }
 
     reset() {
