@@ -97,8 +97,29 @@ class Options extends React.Component {
     displayQuestion() {
         const { pause } = this.state;
         if (pause) return null;
+
         return (
             <div className="question-mark"><Link to="/how-to" onClick={() => console.log('here')}><i className="fas fa-question"></i></Link></div>
+        )
+    }
+
+    displayFirst() {
+        const { pause } = this.state;
+        if (pause) return null;
+
+        return (
+            <div className="first-team" onChange={this.updateFirst}>
+                <h4>Who goes first?</h4>
+                <div className="options-radio" >
+                    <input type="radio" name="first" value={true} />Team 1
+                </div>
+                <div className="options-radio">
+                    <input type="radio" name="first" value={false} />Team 2
+                </div>
+                <div className="options-radio">
+                    <input type="radio" name="first" value="random" defaultChecked />Random
+                </div>
+            </div>
         )
     }
 
@@ -118,18 +139,7 @@ class Options extends React.Component {
                         <input type="text" className="options-input" value={this.state.teamAName} onChange={this.updateInput('teamAName')} />
                         <label className="btn-label">Team 2's Name: </label>
                         <input type="text" className="options-input" value={this.state.teamBName} onChange={this.updateInput('teamBName')} />
-                        <div className="first-team" onChange={this.updateFirst}>
-                            <h4>Who goes first?</h4>
-                            <div className="options-radio" >
-                                <input type="radio" name="first" value={true}/>Team 1
-                            </div>
-                            <div className="options-radio">
-                                <input type="radio" name="first" value={false}/>Team 2
-                            </div>
-                            <div className="options-radio">
-                                <input type="radio" name="first" value="random" defaultChecked/>Random
-                            </div>
-                        </div>
+                        {this.displayFirst()}
                         <div className="time-limit" >
                             <h4>Turn Timer</h4>
                             <input type="number" className="options-input" value={this.state.time} onChange={this.updateInput('time')}/>
