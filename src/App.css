@@ -43,6 +43,19 @@ h4 {
   cursor: pointer;
 }
 
+.question-mark {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  right: 8%;
+  top: 7%;
+  cursor: pointer;
+} 
+
+.question-mark a {
+  color: white;
+}
+
 #root {
   background-color: #23b2e8;
 }
