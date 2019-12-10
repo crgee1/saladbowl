@@ -300,7 +300,7 @@ a {
 
 .start-screen-nonheader {
   display: flex;
-  height: 40vh;
+  min-height: 40vh;
 }
 
 .start-screen a {
@@ -308,7 +308,7 @@ a {
   text-decoration: none;
   color: white;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .start-screen-btn-container {
