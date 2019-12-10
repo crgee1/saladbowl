@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from '../modals/modal';
 import correct from '../../assets/audio/correct.wav';
 import pass from '../../assets/audio/pass.flac';
+import over from '../../assets/audio/over.wav'
 
 class Play extends React.Component {
     constructor(props) {
@@ -18,14 +19,17 @@ class Play extends React.Component {
     }
 
     startTimer() {
-        this.setState({time: this.props.time})
+        const { time, sound } = this.props;
+
+        this.setState({time: time})
         this.timer = setInterval(() => {
             if (this.state.time > 1) {
                 this.setState((prevState) => ({
                     time: prevState.time - 1,
                 }))
             } else {
-                this.setState({modal: 'roundScreen', time: this.props.time, playingTeam: !this.state.playingTeam})
+                this.setState({modal: 'roundScreen', time, playingTeam: !this.state.playingTeam})
+                if (sound) new Audio(over).play();
                 clearInterval(this.timer);
             }
         }, 1000);
