@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1c9f52e4106579710a9cbe4e6af59280",
+    "revision": "843824db2c2df0009b5b7d13378f4378",
     "url": "/saladbowl/index.html"
   },
   {
-    "revision": "48e6f0aa25b5e0edbc9e",
+    "revision": "1a225bc2155ecf49a684",
     "url": "/saladbowl/static/css/main.36bfed55.chunk.css"
   },
   {
-    "revision": "7825fa32b4bb032e2101",
-    "url": "/saladbowl/static/js/2.197d4ec3.chunk.js"
+    "revision": "f221515b16ef4551fc41",
+    "url": "/saladbowl/static/js/2.5548ea30.chunk.js"
   },
   {
-    "revision": "48e6f0aa25b5e0edbc9e",
-    "url": "/saladbowl/static/js/main.8a3910bf.chunk.js"
+    "revision": "1a225bc2155ecf49a684",
+    "url": "/saladbowl/static/js/main.860ecfbb.chunk.js"
   },
   {
     "revision": "c5753d40a953b25861ff",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7e864110aab96c9d9bbf1e33560c5d26",
     "url": "/saladbowl/static/media/correct.7e864110.wav"
+  },
+  {
+    "revision": "4dfa7ee17d0bfbeddf04c19f5b67cdfa",
+    "url": "/saladbowl/static/media/over.4dfa7ee1.wav"
   },
   {
     "revision": "5e94467d52cdf1bb58dce576fe2661b4",
