@@ -86,6 +86,16 @@ class Options extends React.Component {
         this.setState({first: input});
     }
 
+    reset() {
+        sessionStorage.clear();
+        this.setState({
+            words: [],
+            time: 60,
+            teamAName: 'Red Team',
+            teamBName: 'Blue Team',
+        });
+    }
+
     displaySound() {
         const { sound } = this.state;
         return (
@@ -99,7 +109,16 @@ class Options extends React.Component {
         if (pause) return null;
 
         return (
-            <div className="question-mark"><Link to="/how-to" onClick={() => console.log('here')}><i className="fas fa-question"></i></Link></div>
+            <div className="question-mark"><Link to="/how-to"><i className="fas fa-question"></i></Link></div>
+        )
+    }
+
+    displayReset() {
+        const { pause } = this.state;
+        if (pause) return null;
+
+        return (
+            <div className="question-mark" onClick={this.reset.bind(this)}><i className="fas fa-trash"></i></div>
         )
     }
 
@@ -132,6 +151,7 @@ class Options extends React.Component {
                 <div className="options-btn-container">
                     {this.displaySound()}
                     {this.displayQuestion()}
+                    {this.displayReset()}
                 </div>
                 <div className="options-display-left">
                     <form className="options-form team-names" onSubmit={this.startResume.bind(this)}>

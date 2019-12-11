@@ -4,6 +4,7 @@ export default class extends React.Component {
     render() {
         return (
         <div className="how-to">
+            <header><strong> How To Play</strong></header>
             <p>
                 1. Fill the answer bank. Every player should add the same amount of answers (Suggested: 3 - 7 answers per player). Answers can be anything from nouns to common expressions (Suggested: Limit it to 5 words per answer; Try not to pick something too obscure for the player base). <br/>
             </p>
@@ -20,7 +21,7 @@ export default class extends React.Component {
                 b) Round 2, Charades: You must make your team guess the word by acting out the word, without saying anything.
             </p>
             <p className="indent">
-                c) Round 3, One Word: You must make your team guess the word by only saying one word only, that word can not be any part of the answer.
+                c) Round 3, One Word: You must make your team guess the word by only saying one word, that word can not be any part of the answer.
             </p>
             <p>
                 4. The teams alternate turns.
