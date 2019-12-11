@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default class RoundScreen extends React.Component {
+export default function RoundScreen(props) {
 
-    displayName() {
-        const { playingTeam, teamA, teamB } = this.props;
+    const displayName = () => {
+        const { playingTeam, teamA, teamB } = props;
 
         let playingTeamName = playingTeam ? teamA.name : teamB.name;
         return playingTeamName[playingTeamName.length - 1] === 's' ? 
@@ -11,8 +11,8 @@ export default class RoundScreen extends React.Component {
             <div><strong>{playingTeamName}</strong>'s Turn</div>
     }
 
-    displayRound() {
-        const { round } = this.props;
+    const displayRound = () => {
+        const { round } = props;
         let roundType = round === 1 ? 'Verbal Clues' : round === 2 ? 'Charades' : 'One Word';
 
         return (
@@ -27,28 +27,26 @@ export default class RoundScreen extends React.Component {
         )
     }
 
-    render() {
-        const { teamA, teamB, startRound, toggleInput } = this.props;
+    const { teamA, teamB, startRound, toggleInput } = props;
         
-        return (
-            <div className="round-screen-container">
-                <i className="fas fa-cogs" onClick={toggleInput('pause')}></i>
-                <div className="round-screen">
-                    {this.displayRound()}
-                    {this.displayName()}
-                    <div className="round-screen-scores">
-                        <div className="team-scores">
-                            <div>Team: {teamA.name}</div>
-                            <div>Points: {teamA.points}</div>
-                        </div>
-                        <div className="team-scores">
-                            <div>Team: {teamB.name}</div>
-                            <div>Points: {teamB.points}</div>
-                        </div>
+    return (
+        <div className="round-screen-container">
+            <i className="fas fa-cogs" onClick={toggleInput('pause')}></i>
+            <div className="round-screen">
+                {displayRound()}
+                {displayName()}
+                <div className="round-screen-scores">
+                    <div className="team-scores">
+                        <div>Team: {teamA.name}</div>
+                        <div>Points: {teamA.points}</div>
+                    </div>
+                    <div className="team-scores">
+                        <div>Team: {teamB.name}</div>
+                        <div>Points: {teamB.points}</div>
                     </div>
                 </div>
-                <div className="btn round-screen-btn" onClick={startRound}>Start Your Turn</div>
             </div>
-        )
-    }
+            <div className="btn round-screen-btn" onClick={startRound}>Start Your Turn</div>
+        </div>
+    );
 }
