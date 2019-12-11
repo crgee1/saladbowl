@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-export default class extends React.Component {
-    render() {
-        return (
+
+export default function HowTo() {
+    return (
         <div className="how-to">
             <header><strong> How To Play</strong></header>
             <p>
@@ -34,6 +34,5 @@ export default class extends React.Component {
             </p>
             <Link className="back-btn" to="/">Back to the Menu</Link>
         </div>
-        )
-    }
+    );
 }
