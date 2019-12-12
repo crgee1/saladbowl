@@ -3,8 +3,9 @@ import Modal from '../modals/modal';
 import correct from '../../assets/audio/correct.wav';
 import pass from '../../assets/audio/pass.flac';
 import over from '../../assets/audio/over.wav'
+import timeSound from '../../assets/audio/timeSound1.wav'
 
-function Play(props) {
+export default function Play(props) {
 
     const [teamAPoints, setTeamAPoints] = useState(0);
     const [teamBPoints, setTeamBPoints] = useState(0);
@@ -21,7 +22,8 @@ function Play(props) {
     const endTurn = () => {
         setModal('roundScreen');
         setWords([word, ...words]);
-        clearInterval(ref.current);
+        clearInterval(ref.current.timer);
+        ref.current.ticker.pause();
         setPlayingTeam(!playingTeam);
         setTime(props.time);
         if (sound) new Audio(over).play();
@@ -35,9 +37,16 @@ function Play(props) {
 
     const startTimer = () => {
         setTime(props.time);
-        ref.current = setInterval(() => {
+        const ticker = new Audio(timeSound);
+        ticker.addEventListener('ended', () => {
+            ticker.play();
+        });
+        ref.current = {ticker}
+        if (sound) ticker.play();
+        const timer = setInterval(() => {
             setTime(time => time-1);
         }, 1000);
+        ref.current.timer = timer;
     }
     
     const shuffleWords = () => {
@@ -62,7 +71,6 @@ function Play(props) {
     const correctWord = () => {
         // const { words, playingTeam, teamAPoints, teamBPoints } = this.state;
         let wordsArr = [...words];
-        console.log(props.words);
         givePoints();
         if (wordsArr.length === 0) {
             endRound();
@@ -75,18 +83,15 @@ function Play(props) {
     }
 
     const endRound = () => {
-        // const { playingTeam, teamAPoints, teamBPoints, round } = this.state;
-
-        // setTime(0);
         if (round === 3) {
             setModal('endScreen');
         } else {
             setModal('roundScreen');
             setRound(round+1);
             setWords(props.words);
-            // shuffleWords();
+            ref.current.ticker.pause();
         };
-        clearInterval(ref.current);
+        clearInterval(ref.current.timer);
         setPlayingTeam(!playingTeam);
         setTime(props.time);
         setWords(props.words);
@@ -259,5 +264,3 @@ function Play(props) {
 //         )
 //     }
 // }
-
-export default Play;
