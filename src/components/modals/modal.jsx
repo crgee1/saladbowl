@@ -2,7 +2,7 @@ import React from 'react';
 import RoundScreen from './round_screen';
 import EndScreen from './end_screen';
 
-function Modal(props) {
+export default function Modal(props) {
     const { modal, teamA, teamB, startRound, playingTeam, round, toggleInput } = props;
         
     if (!modal) {
@@ -44,5 +44,3 @@ function Modal(props) {
         </div>
     );
 }
-
-export default Modal;
