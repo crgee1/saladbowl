@@ -142,6 +142,25 @@ class Options extends React.Component {
         )
     }
 
+    displayAnswerBank() {
+        const { pause } = this.state;
+
+        if (pause) return null;
+
+        return (
+        <div className="options-display-right">
+            <form className="options-form-answers" onSubmit={this.addWord.bind(this)}>
+                <label className="btn-label">Add to the Answer Bank</label>
+                <section>
+                    <input type="text" className="options-input" placeholder="Add to the answers" />
+                    <input type="submit" className="btn" value="Add Word/Phrase" />
+                </section>
+            </form>
+            <div className="answers-bank-container">{this.displayAnswers()}</div>
+        </div>
+        )
+    }
+
     displayOptions() {
         const { display, pause } = this.state;
         if (!display && !pause) return null;
@@ -167,16 +186,7 @@ class Options extends React.Component {
                         <input type="submit" className="btn" value={pause ? "Resume Game" : "Start Game"} />
                     </form>
                 </div>
-                <div className="options-display-right">
-                    <form className="options-form-answers" onSubmit={this.addWord.bind(this)}>
-                        <label className="btn-label">Add to the Answer Bank</label>
-                        <section>
-                            <input type="text" className="options-input" placeholder="Add to the answers" />
-                            <input type="submit" className="btn" value="Add Word/Phrase" />
-                        </section>
-                    </form>
-                    <div className="answers-bank-container">{this.displayAnswers()}</div>
-                </div>
+                {this.displayAnswerBank()}
             </div>
         )
     }

@@ -313,6 +313,7 @@ a {
 
 .start-screen-btn-container {
   width: 50%;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
