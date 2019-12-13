@@ -85,6 +85,7 @@ export default function Play(props) {
     const endRound = () => {
         if (round === 3) {
             setModal('endScreen');
+            ref.current.ticker.pause();
         } else {
             setModal('roundScreen');
             setRound(round+1);
