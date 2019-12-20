@@ -12,7 +12,7 @@ export default function HowTo() {
                 2. Split into two teams. Each team sets up their own rotation of players.
             </p>
             <p>
-                3. The player who's turn it is, is given a word and must get their team to guess the word based on the rules of the particular round. Once the word is guessed correctly, their team earns a point, and the player is given a new word until the time limit runs out.
+                3. The player whose turn it is, is given a word and must get their team to guess the word based on the rules of the particular round. Once the word is guessed correctly, their team earns a point, and the player is given a new word until the time limit runs out.
             </p>
             <p className="indent">
                 a) Round 1, Verbal Clues: You must make your team guess the word by telling them clues, without actually saying any part of the answer.

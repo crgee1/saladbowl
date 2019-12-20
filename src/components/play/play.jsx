@@ -69,7 +69,6 @@ export default function Play(props) {
     }
 
     const correctWord = () => {
-        // const { words, playingTeam, teamAPoints, teamBPoints } = this.state;
         let wordsArr = [...words];
         givePoints();
         if (wordsArr.length === 0) {
@@ -85,13 +84,11 @@ export default function Play(props) {
     const endRound = () => {
         if (round === 3) {
             setModal('endScreen');
-            ref.current.ticker.pause();
         } else {
             setModal('roundScreen');
             setRound(round+1);
-            setWords(props.words);
-            ref.current.ticker.pause();
         };
+        ref.current.ticker.pause();
         clearInterval(ref.current.timer);
         setPlayingTeam(!playingTeam);
         setTime(props.time);
