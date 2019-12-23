@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useReducer } from 'react';
 import Modal from '../modals/modal';
 import correct from '../../assets/audio/correct.wav';
 import pass from '../../assets/audio/pass.flac';
 import over from '../../assets/audio/over.wav'
 import timeSound from '../../assets/audio/timeSound1.wav'
+
+import reducer from '../reducer';
 
 export default function Play(props) {
 
