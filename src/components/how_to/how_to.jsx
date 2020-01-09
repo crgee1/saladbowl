@@ -9,7 +9,7 @@ export default function HowTo() {
                 1. Fill the answer bank. Every player should add the same amount of answers (Suggested: 3 - 7 answers per player). Answers can be anything from nouns to common expressions (Suggested: Limit it to 5 words per answer; Try not to pick something too obscure for the player base). <br/>
             </p>
             <p>
-                2. Split into two teams. Each team sets up their own rotation of players.
+                2. Split into two teams. Each team sets up their own order to send up a player on their team's turn.
             </p>
             <p>
                 3. The player whose turn it is, is given a word and must get their team to guess the word based on the rules of the particular round. Once the word is guessed correctly, their team earns a point, and the player is given a new word until the time limit runs out.

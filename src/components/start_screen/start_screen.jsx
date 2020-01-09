@@ -1,7 +1,6 @@
 import React from 'react';
 import saladbowl from '../../assets/images/saladbowl.png';
 import { Link } from 'react-router-dom';
-import reducer from '../reducer';
 
 export default function StartScreen() {
     return (
