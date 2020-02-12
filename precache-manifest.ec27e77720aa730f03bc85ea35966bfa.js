@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "63f0a8474dae263e51b0da9185a9d745",
+    "revision": "ac213788c569ff387e9bf1adf7a2b5fe",
     "url": "/saladbowl/index.html"
   },
   {
-    "revision": "f23a269dfb4377e60634",
+    "revision": "aa1463499573b4538aa9",
     "url": "/saladbowl/static/css/main.0cea307e.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/saladbowl/static/js/2.3ea87605.chunk.js"
   },
   {
-    "revision": "f23a269dfb4377e60634",
-    "url": "/saladbowl/static/js/main.13f56fef.chunk.js"
+    "revision": "aa1463499573b4538aa9",
+    "url": "/saladbowl/static/js/main.81a1b6d6.chunk.js"
   },
   {
     "revision": "c5753d40a953b25861ff",
