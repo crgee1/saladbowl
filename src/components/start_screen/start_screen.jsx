@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import saladbowl from '../../assets/images/saladbowl.png';
 import { Link } from 'react-router-dom';
 
 export default function StartScreen() {
+    useEffect(() => {
+        window.onbeforeunload = function () {
+            return 'You really want to go ahead?';
+        }
+    }, []);
+
     return (
         <div className="start-screen">
             <header className="start-screen-header">Salad Bowl</header>
